@@ -7,7 +7,9 @@ public class Hello{
 
      public void sayHello()
      {
-		 Syste.out.println("hello world !");
-      }
-
+		 Syste.out.println("hello world and me ![M '.");
+	 }
 }
+
+
+
