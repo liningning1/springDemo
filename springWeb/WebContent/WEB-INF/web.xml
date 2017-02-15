@@ -47,6 +47,23 @@
 	 <url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 增加了spring security 3.1 的权限过滤 -->
+	<filter>
+	  <filter-name>springSecurityFilterChain</filter-name>
+	  <!--  Spring MVC过滤器-委派过滤器代理（DelegatingFilterProxy）  
+	        org.springframework.web.filter中有一个特殊的类——DelegatingFilterProxy，
+	                        该类其实并不能说是一个过滤器，它的原型是FilterToBeanProxy，
+	                        即将Filter作为spring的bean，由spring来管理。 -->
+	  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+	 <filter-name>springSecurityFilterChain</filter-name>
+	 <url-pattern>/background/*</url-pattern>
+	</filter-mapping>
+	
+	<welcome-file-list>
+	  <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 	
 	
 	
