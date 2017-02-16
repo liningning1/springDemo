@@ -2,8 +2,15 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
-
-
+	<!-- 给实体Bean 添加别名 -->
+	<!-- Mybatis有个代码生成工具，生成的代码里面有mapper.xml文件， mapper.xml中的sql语句会用parameterType这个属性，而这个值可能是我们自定义的对象， 
+		此时，如果没有typealiases，我们就需要为parameterType指定全路径： -->
+	<typeAliases>
+		<typeAlias type="com.lanyuan.entity.User" alias="User" />
+		<typeAlias type="com.lanyuan.entity.UserLoginList" alias="UserLoginList" />
+		<typeAlias type="com.lanyuan.entity.Resources" alias="Resources" />
+		<typeAlias type="com.lanyuan.entity.Roles" alias="Roles" />
+		<typeAlias type="com.lanyuan.entity.UserRoles" alias="UserRoles" />
+	</typeAliases>
 </configuration>	
 	
