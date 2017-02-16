@@ -4,6 +4,40 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	
+	<!-- 指明以下的资源文件不采用spring的过滤器，而是采用默认的过滤器 -->
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.css</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.xml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.swf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.zip</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.gif</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>default</servlet-name>
+	 <url-pattern>*.js</url-pattern>
+	</servlet-mapping>
+	
 	<!-- 为该项目全局的servletContext 添加参数(键值对)  -->
 	<!-- 第三段,讲如何部署applicationContext的xml文件，
 	如果在web.xml中不写任何参数配置信息，默认的路径是”/WEB-INF/applicationContext.xml，
@@ -73,12 +107,4 @@
 	 <exception-type>java.lang.Exception</exception-type>
 	 <location>/error.jsp</location>
 	</error-page>
-	
-	
-	
-	
-	
-	
-	
-	
 </web-app>
