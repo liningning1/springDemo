@@ -11,7 +11,7 @@ import java.util.Set;
 @SuppressWarnings("serial")
 public class User implements Serializable {
 
-	private int userId;
+	private Integer userId;
 	private String userName;
 	private String roleName;
 	private String userPassword;
@@ -47,14 +47,14 @@ public class User implements Serializable {
     }
 
 	
-
-	public int getUserId() {
+    
+	public Integer getUserId() {
 		return userId;
 	}
 
 
 
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
