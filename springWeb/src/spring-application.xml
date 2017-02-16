@@ -15,5 +15,60 @@
     http://www.springframework.org/schema/task/spring-task-3.0.xsd     
     http://www.springframework.org/schema/aop 
      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-     
+    
+    <!-- 读取一些资源文件
+              其中org.springframework.beans.factory.config.PropertyPlaceholderConfigurer。
+              通过这个类，您可以将一些组态设定，移出至.properties文件中，而.properties文件可以作为客户根据需求，
+              自定义一些相关的参数。
+     -->
+    <bean id="propertyConfiger" 
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="location" value="classpath:jdbc.properties"></property>
+    </bean>
+    <!--说明：DriverManagerDataSource建立连接是只要有连接就新建一个connection,根本没有连接池的作用。-->
+    <bean id="dataSource"
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName">
+        <value>${driverClassName}</value>
+      </property>
+      <property name="url">
+        <value>${url}</value>
+      </property>
+      <property name="username">
+        <value>${username}</value>
+      </property>
+      <property name="password">
+        <value>${password}</value>
+      </property>
+    </bean>
+    
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+     <property name="dataSource" ref="dataSource"/>
+     <property name="configLocation" value="classpath:mybatis.xml"/>
+     <property name="mapperLocations">
+       <list>
+         <!-- 自动匹配Mapper 的映射文件 -->
+         <value>
+          classpath:com/lanyuan/entity/*-mapper.xml
+         </value>
+       </list>
+     </property>  
+    </bean>
+    <!-- 用自动扫描 就要用mybatis的接口,仓储类接口，这个项目没有用到ｍｙｂｂａｉｔｓ的接口方式所以不要以下扫描
+		否则会出现
+		org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner.main No MyBatis mapper was found in 'com.lanyuan.dao.impl' package. Please check your configuration.
+		警告
+	 -->
+	<!-- 
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.lanyuan.dao.impl" />
+	</bean> -->
+	<!-- 事务配置 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      <property name="dataSource" ref="dataSource"/>
+    </bean> 
+    
+    
+    
+    
 </beans>
