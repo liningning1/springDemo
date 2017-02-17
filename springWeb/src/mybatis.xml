@@ -13,6 +13,7 @@
 		<typeAlias type="com.lanyuan.entity.UserRoles" alias="UserRoles" />
 		<typeAlias type="com.lanyuan.entity.ResourceRoles" alias="ResourceRoles"/>
 		<typeAlias type="com.lanyuan.entity.ServerInfo" alias="ServerInfo"/>
+		<typeAlias type="com.lanyuan.entity.Log" alias="Log"/>
 	</typeAliases>
 </configuration>	
 	
