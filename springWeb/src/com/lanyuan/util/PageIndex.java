@@ -1,6 +1,7 @@
 package com.lanyuan.util;
 
 /**
+ * 
  * 页码的索引类
  * @author linn
  *
@@ -10,7 +11,7 @@ public class PageIndex {
 	private long startindex;
 	private long endindex;
 	public PageIndex(long startindex, long endindex) {
-		super();
+		
 		this.startindex = startindex;
 		this.endindex = endindex;
 	}
