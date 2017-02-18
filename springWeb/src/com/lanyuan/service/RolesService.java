@@ -12,7 +12,7 @@ public interface RolesService {
 	
 	public void add(Roles roles);
 	
-	public void delete(Roles roles);
+	public void delete(Integer id);
 	
 	public void modify(Roles roles);
 	
