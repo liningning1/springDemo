@@ -20,6 +20,10 @@
     <context:component-scan base-package="com.lanyuan.dao"/>
     <context:component-scan base-package="com.lanyuan.service"/>
     
+    <!-- 隐式的向spring容器注册 -->
+    <context:annotation-config/>
+    
+    
     <!-- 读取一些资源文件
               其中org.springframework.beans.factory.config.PropertyPlaceholderConfigurer。
               通过这个类，您可以将一些组态设定，移出至.properties文件中，而.properties文件可以作为客户根据需求，
