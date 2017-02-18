@@ -10,6 +10,7 @@ import com.lanyuan.entity.Roles;
 import com.lanyuan.entity.User;
 import com.lanyuan.util.PageView;
 
+@Resposity("userDao")
 public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 
 	@Override
