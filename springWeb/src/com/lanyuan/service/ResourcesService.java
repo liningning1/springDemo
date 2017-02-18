@@ -27,5 +27,5 @@ public interface ResourcesService {
 	
 	public List<Resources> getResourcesByUserName(String userName);
 	
-	public void saveRoleResources(Integer roleId,List<String> list);
+	public void saveRoleResources(Integer roleId,List<Integer> list);
 }
