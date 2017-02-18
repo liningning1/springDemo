@@ -10,5 +10,5 @@ public interface UserDao extends BaseDao<User> {
 	
 	public User querySingleUser(String userName);
 	
-	public Roles findbyUserRoles(String userId);
+	public Roles findbyUserRoles(Integer userId);
 }
