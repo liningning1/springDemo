@@ -4,13 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import com.lanyuan.base.impl.BaseDaoImpl;
 import com.lanyuan.dao.UserDao;
 import com.lanyuan.entity.Roles;
 import com.lanyuan.entity.User;
 import com.lanyuan.util.PageView;
 
-@Resposity("userDao")
+@Repository("userDao")
 public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 
 	@Override
