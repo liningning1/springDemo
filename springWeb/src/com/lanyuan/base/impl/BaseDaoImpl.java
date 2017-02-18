@@ -17,7 +17,7 @@ import com.lanyuan.util.PageView;
  *
  */
 
-public  class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao{
+public  class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao<T>{
 
 	//获取传递的泛型类的类名
 	public String getClassName()
@@ -29,7 +29,7 @@ public  class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao{
 	}
 	
 	@Override
-	public List<T> query(PageView pageView, Object t) {
+	public List<T> query(PageView pageView, T t) {
 		
 		Map<Object,Object> map = new HashMap<Object,Object>();
 		map.put("paging", pageView);
@@ -44,24 +44,24 @@ public  class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao{
 		this.getSqlSession().delete(this.getClassName()+".deletdById", id);
 	}
 
-	public Object getById(Integer id) {
+	public T getById(Integer id) {
 		
 		return this.getSqlSession().selectOne(this.getClassName()+".getById", id);
 	}
 
 	@Override
-	public List queryAll(Object t) {
+	public List queryAll(T t) {
 		return this.getSqlSession().selectList(this.getClassName()+".queryAll",t);
 	}
 
 	@Override
-	public void add(Object t) {
+	public void add(T t) {
 		this.getSqlSession().insert(this.getClassName()+".add", t);
 		
 	}
 
 	@Override
-	public void modify(Object t) {
+	public void modify(T t) {
 		this.getSqlSession().update(this.getClassName()+".update", t);
 		
 	}
