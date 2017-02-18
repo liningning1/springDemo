@@ -17,7 +17,7 @@ public interface ResourcesService {
 	
 	public Resources getById(Integer id);
 	
-	public List<Resources> queryAll();
+	public List<Resources> findAll();
 	
 	//根据用户的id获取用户的权限
 	public List<Resources> getUserResources(Integer id);
