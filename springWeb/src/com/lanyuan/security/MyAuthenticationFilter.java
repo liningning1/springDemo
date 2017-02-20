@@ -89,4 +89,21 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 		// 运行UserDetailsService的loadUserByUsername 再次封装Authentication
 		return this.getAuthenticationManager().authenticate(token);
 	}
+
+	public String getSuccessUrl() {
+		return successUrl;
+	}
+
+	public void setSuccessUrl(String successUrl) {
+		this.successUrl = successUrl;
+	}
+
+	public String getErrorUrl() {
+		return errorUrl;
+	}
+
+	public void setErrorUrl(String errorUrl) {
+		this.errorUrl = errorUrl;
+	}
+	
 }
