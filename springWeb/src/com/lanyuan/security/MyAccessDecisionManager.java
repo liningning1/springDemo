@@ -9,10 +9,12 @@ import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Service;
 
 /*
  *AccessDecisionManager 判断当前用户是否拥有访问该资源的权限             ---用于授权一个特定的操作。
  */
+@Service
 public class MyAccessDecisionManager implements AccessDecisionManager {
 
 	@Override
