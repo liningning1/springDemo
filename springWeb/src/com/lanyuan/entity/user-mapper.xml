@@ -164,11 +164,14 @@
     </select>
     
     <!-- 根椐用户名查出userId -->
-    <select id="queryUserName" parameterType="String" resultType="User">
+    <select id="queryUserName" parameterType="int" resultType="User">
        select
        <include refid="selectId"/>
        from user where userName=#{userName}
     </select>
-   
-   
+    <select id="getById" parameterType="int" resultType="User">
+		select
+		<include refid="selectId" />
+		from user where userId=#{userId}
+	</select>
 </mapper>
