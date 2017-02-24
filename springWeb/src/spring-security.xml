@@ -32,7 +32,7 @@
 	   <!-- 以上未列出的,也都必须验证才能访问 -->
 	   <intercept-url pattern="/background/**" access="isAuthenticated()"/>
 	   <!-- 所有地址全开,无需验证 -->
-	   <intercept-url pattern="/**" access="permitAll"/>
+	   <!--<intercept-url pattern="/**" access="permitAll"/>-->
 	   <!-- 登出管理 
 	    logout-success-url 属性:这个指定的URL会触发注销操作，默认是 /j_spring_security_logout
         invalidate-session 属性：如果为true，在注销的时候会销毁会话
