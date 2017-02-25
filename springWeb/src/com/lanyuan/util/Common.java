@@ -2,6 +2,9 @@ package com.lanyuan.util;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+
 public class Common {
 
 	public static boolean isEmpty(String s)
@@ -36,4 +39,22 @@ public class Common {
 		return ip;
 		
 	}
+
+	//获取经过认证的用户名
+    public static String getAuthenticationUsername()
+    {
+    	String username = null;
+    	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails)
+        {
+        	username = ((UserDetails)principal).getUsername();
+        }
+        else
+        {
+        	username = principal.toString();
+        }
+    
+        return username;
+    }
+    
 }
