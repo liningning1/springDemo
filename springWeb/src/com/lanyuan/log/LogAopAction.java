@@ -4,12 +4,16 @@ import java.net.InetAddress;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.lanyuan.dao.LogDao;
 import com.lanyuan.entity.Log;
 import com.lanyuan.util.Common;
 
+@Aspect
+@Component
 public class LogAopAction {
 
 	@Autowired
