@@ -26,6 +26,33 @@ public class ServerStatus implements Serializable{
 	private long usedSwap;
 	private long freeSwap;
 	
+	private long totalMem;
+	public long getTotalMem() {
+		return totalMem;
+	}
+
+	public void setTotalMem(long totalMem) {
+		this.totalMem = totalMem;
+	}
+
+	public long getUsedMem() {
+		return usedMem;
+	}
+
+	public void setUsedMem(long usedMem) {
+		this.usedMem = usedMem;
+	}
+
+	public long getFreeMem() {
+		return freeMem;
+	}
+
+	public void setFreeMem(long freeMem) {
+		this.freeMem = freeMem;
+	}
+
+	private long usedMem;
+	private long freeMem;
 	private String cpuUsage;//CPU使用率
 	private String ip;//本机ip
 	

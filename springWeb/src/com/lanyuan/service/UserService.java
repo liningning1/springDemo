@@ -21,4 +21,6 @@ public interface UserService {
 	public User querySingleUser(String username);
 	
 	public Roles findbyUserId(Integer userId);
+	
+	public Roles findbyUserRole(String userId);
 }

@@ -78,4 +78,10 @@ public class UserServiceImpl implements UserService {
 		return userDao.findbyUserRoles(userId);
 	}
 
+	@Override
+	public Roles findbyUserRole(String userId) {
+		
+		return userDao.findbyUserRoles(Integer.parseInt(userId));
+	}
+
 }
